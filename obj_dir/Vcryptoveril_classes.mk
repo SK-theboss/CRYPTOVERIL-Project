@@ -30,6 +30,7 @@ VM_CLASSES_FAST += \
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vcryptoveril___024root__Slow \
+	Vcryptoveril___024root__DepSet_h14bab9b8__0__Slow \
 	Vcryptoveril___024root__DepSet_h2cb938a1__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization

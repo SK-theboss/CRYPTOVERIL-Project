@@ -24,15 +24,39 @@ void Vcryptoveril___024root__trace_chg_0_sub_0(Vcryptoveril___024root* vlSelf, V
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 1);
     // Body
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[1U])) {
-        bufp->chgCData(oldp+0,(vlSelf->cryptoveril__DOT__stage1_out),8);
-        bufp->chgCData(oldp+1,(vlSelf->cryptoveril__DOT__stage2_out),8);
-        bufp->chgCData(oldp+2,(vlSelf->cryptoveril__DOT__buf1_out),8);
-        bufp->chgCData(oldp+3,(vlSelf->cryptoveril__DOT__buf2_out),8);
+        bufp->chgSData(oldp+0,(vlSelf->cryptoveril__DOT__stage2_out),16);
+        bufp->chgBit(oldp+1,(vlSelf->cryptoveril__DOT__stage2_valid));
+        bufp->chgSData(oldp+2,(vlSelf->cryptoveril__DOT__buf2_out),16);
+        bufp->chgBit(oldp+3,(vlSelf->cryptoveril__DOT__u_buf2__DOT__full));
+        bufp->chgCData(oldp+4,(vlSelf->cryptoveril__DOT__u_stage2__DOT__state),2);
     }
-    bufp->chgBit(oldp+4,(vlSelf->clk));
-    bufp->chgBit(oldp+5,(vlSelf->rst));
-    bufp->chgCData(oldp+6,(vlSelf->data_in),8);
-    bufp->chgCData(oldp+7,(vlSelf->data_out),8);
+    if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[2U])) {
+        bufp->chgSData(oldp+5,(vlSelf->cryptoveril__DOT__stage1_out),16);
+        bufp->chgBit(oldp+6,(vlSelf->cryptoveril__DOT__stage1_valid));
+        bufp->chgBit(oldp+7,(vlSelf->cryptoveril__DOT__buf1_ready));
+        bufp->chgSData(oldp+8,(vlSelf->cryptoveril__DOT__buf1_out),16);
+        bufp->chgBit(oldp+9,(vlSelf->cryptoveril__DOT__u_buf1__DOT__full));
+    }
+    if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[3U])) {
+        bufp->chgBit(oldp+10,(vlSelf->cryptoveril__DOT__stage2_ready));
+        bufp->chgBit(oldp+11,(vlSelf->cryptoveril__DOT__buf2_ready));
+        bufp->chgBit(oldp+12,(vlSelf->cryptoveril__DOT__buf2_valid));
+    }
+    bufp->chgBit(oldp+13,(vlSelf->clk1));
+    bufp->chgBit(oldp+14,(vlSelf->clk2));
+    bufp->chgBit(oldp+15,(vlSelf->clk3));
+    bufp->chgBit(oldp+16,(vlSelf->rst));
+    bufp->chgSData(oldp+17,(vlSelf->input_data),16);
+    bufp->chgCData(oldp+18,(vlSelf->key_bits),6);
+    bufp->chgSData(oldp+19,(vlSelf->output_data),16);
+    bufp->chgBit(oldp+20,(vlSelf->cryptoveril__DOT__buf1_valid));
+    bufp->chgBit(oldp+21,(vlSelf->cryptoveril__DOT__stage3_ready));
+    bufp->chgBit(oldp+22,(vlSelf->cryptoveril__DOT__stage3_valid));
+    bufp->chgCData(oldp+23,((7U & (IData)(vlSelf->key_bits))),3);
+    bufp->chgCData(oldp+24,((3U & ((IData)(vlSelf->key_bits) 
+                                   >> 3U))),2);
+    bufp->chgCData(oldp+25,((3U & (((IData)(vlSelf->key_bits) 
+                                    >> 3U) ^ (IData)(vlSelf->cryptoveril__DOT__u_stage2__DOT__state)))),2);
 }
 
 void Vcryptoveril___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {
@@ -44,4 +68,6 @@ void Vcryptoveril___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unuse
     vlSymsp->__Vm_activity = false;
     vlSymsp->TOP.__Vm_traceActivity[0U] = 0U;
     vlSymsp->TOP.__Vm_traceActivity[1U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[2U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[3U] = 0U;
 }

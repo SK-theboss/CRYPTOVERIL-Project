@@ -11,6 +11,7 @@ Vcryptoveril__ALL.o: Vcryptoveril__ALL.cpp Vcryptoveril.cpp \
  Vcryptoveril___024root__DepSet_h14bab9b8__0.cpp \
  Vcryptoveril___024root__DepSet_h2cb938a1__0.cpp \
  Vcryptoveril__Trace__0.cpp Vcryptoveril___024root__Slow.cpp \
+ Vcryptoveril___024root__DepSet_h14bab9b8__0__Slow.cpp \
  Vcryptoveril___024root__DepSet_h2cb938a1__0__Slow.cpp \
  Vcryptoveril__Syms.cpp Vcryptoveril__Trace__0__Slow.cpp \
  Vcryptoveril__TraceDecls__0__Slow.cpp

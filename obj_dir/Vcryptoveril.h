@@ -25,10 +25,13 @@ class alignas(VL_CACHE_LINE_BYTES) Vcryptoveril VL_NOT_FINAL : public VerilatedM
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
-    VL_IN8(&clk,0,0);
+    VL_IN8(&clk1,0,0);
+    VL_IN8(&clk2,0,0);
+    VL_IN8(&clk3,0,0);
     VL_IN8(&rst,0,0);
-    VL_IN8(&data_in,7,0);
-    VL_OUT8(&data_out,7,0);
+    VL_IN8(&key_bits,5,0);
+    VL_IN16(&input_data,15,0);
+    VL_OUT16(&output_data,15,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

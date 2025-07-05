@@ -7,16 +7,22 @@ module enc_stage1 (
     output reg [15:0] out_data,
     output reg valid_out
 );
+
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             out_data <= 0;
             valid_out <= 0;
         end else if (valid_in) begin
+<<<<<<< HEAD
             out_data <= (in_data << key_bits) + key_bits;
+=======
+            out_data <= (in_data << key_bits) + {13'b0, key_bits};
+>>>>>>> a0fa7d5 (Updated)
             valid_out <= 1;
         end else begin
             valid_out <= 0;
         end
     end
+
 endmodule
 

@@ -10,10 +10,13 @@
 Vcryptoveril::Vcryptoveril(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vcryptoveril__Syms(contextp(), _vcname__, this)}
-    , clk{vlSymsp->TOP.clk}
+    , clk1{vlSymsp->TOP.clk1}
+    , clk2{vlSymsp->TOP.clk2}
+    , clk3{vlSymsp->TOP.clk3}
     , rst{vlSymsp->TOP.rst}
-    , data_in{vlSymsp->TOP.data_in}
-    , data_out{vlSymsp->TOP.data_out}
+    , key_bits{vlSymsp->TOP.key_bits}
+    , input_data{vlSymsp->TOP.input_data}
+    , output_data{vlSymsp->TOP.output_data}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
